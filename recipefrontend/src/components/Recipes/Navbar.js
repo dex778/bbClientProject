@@ -1,14 +1,20 @@
-import React from 'react';
+import React, {useState} from 'react';
+import {
+  Navbar,
+  NavbarBrand
+} from 'reactstrap';
 
-const Navbar = () => {
+const Sitebar = (props) => {
 
 
     return (
-        <div>
+        <Navbar color="faded" light expand="md">
+          <NavbarBrand href="/">Recipe App</NavbarBrand>
+        </Navbar>
+        // <div>
             
-        </div>
-      );
-
+        // </div>
+    )
 }
  
-export default Navbar;
+export default Sitebar;
