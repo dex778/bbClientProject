@@ -36,3 +36,32 @@
     transform: rotate(360deg);
   }
 }
+
+
+/* header */
+.header {
+  margin-top: 0.5em!important;
+  text-align: center;
+  background-color: #53565A;
+  color: white;
+}
+
+.header a {
+  color: white;
+}
+
+.header p {
+  margin-top: 0.8em!important;
+}
+
+/* footer */
+footer {
+  background-color: #53565A;
+  color: white;
+  margin-top: 10px;
+}
+
+footer p {
+  margin-top: 0.8em!important;
+  margin-left: 1.5em;
+}
