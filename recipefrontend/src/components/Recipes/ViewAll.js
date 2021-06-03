@@ -1,13 +1,29 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Table, Button } from 'reactstrap';
 import Navbar from './Navbar';
+import CreateRecipe from "./CreateRecipe"
 import ViewRecipe from './ViewRecipe';
 import RecipeTable from './RecipeTable';
 // import Authorization from 'Authorization';
 
+const ViewAll = (props) => {
+    const [recipes, setRecipes] = useState([]);
+    const fetchWorkouts = () => {
+        fetch('http://localhost:3000/my-recipes', {
+            method: 'GET',
+            headers: new Headers ({
+                'Content-Type': 'application/json',
+                'Authorization': props.token
+            })
+        }) .then( (res) => res.json())
+        .then((logRecipe) => {
+            setRecipes(logRecipe)
+        })
+    }
+    useEffect(() => {
+        fetchRepices();
+    }, [])
 
-
-const ViewAll  = (props) => {
     return(
         <Container>
             <Row>
