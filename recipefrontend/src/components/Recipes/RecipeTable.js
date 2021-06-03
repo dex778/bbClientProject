@@ -17,8 +17,8 @@ const RecipeTable = (props) => {
 
     //check button links below
 
-    const ViewAll = () => {
-        return props.recipes.map((recipes, index) => {
+    const ViewRecipes = () => {
+        return props.recipes.map((recipe, index) => {
             return(
                 <tr key={index}>
                     <th scope='row'>{recipe.id}</th>
@@ -47,7 +47,7 @@ const RecipeTable = (props) => {
                 </tr>
             </thead>
             <tbody>
-
+            
             </tbody>
         </Table>
         </div>
