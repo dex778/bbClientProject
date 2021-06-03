@@ -18,13 +18,7 @@ const ViewAll = (props) => {
         }) .then( (res) => res.json())
         .then((logRecipe) => {
             setRecipes(logRecipe)
-        })
-    }
-    useEffect(() => {
-        fetchRepices();
-    }, [])
-
-    return(
+        }),
         <Container>
             <Row>
                 <Col md='3'>
@@ -35,8 +29,7 @@ const ViewAll = (props) => {
                 </Col>
                 </Row>
         </Container>
-    )
+    }  
 }
 
 export default ViewAll;
-
