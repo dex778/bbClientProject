@@ -2,7 +2,6 @@ import React from 'react';
 import { Table, Button } from 'reactstrap';
 import ViewRecipe from './ViewRecipe';
 
-
 const RecipeTable = (props) => {
     const deleteRecipe = (recipe) => {
         fetch(`http://localhost:3000/Recipes/${recipe.id}`, { //is link correct? 
@@ -27,8 +26,8 @@ const RecipeTable = (props) => {
                     <td>{recipe.created}</td>
                     <td>
                         <Button color='primary' onClick={() => {ViewRecipe(recipe)}}>View</Button>
-                        <Button color='warning' onClick={() => {editRecipe(recipe); props.UpdateOn()}}>Edit</Button>
-                        <Button color='danger' onClick={() => {deleteRecipe(recipe)}}>Delete</Button>
+                        {/* <Button color='warning' onClick={() => {editRecipe(recipe); props.UpdateOn()}}>Edit</Button>
+                        <Button color='danger' onClick={() => {deleteRecipe(recipe)}}>Delete</Button> */}
                     </td>
                 </tr>
             )
