@@ -12,9 +12,7 @@ const CreateRecipe = () => {
            </div>
            
            <div>
-               <Switch>
-                   <Route exact path='/viewrecipe'><ViewRecipe /></Route>
-               </Switch>
+               
            </div>
         </div>
      );

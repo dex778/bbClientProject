@@ -1,4 +1,5 @@
 import React from 'react';
+<<<<<<< HEAD
 import ViewRecipe from './ViewRecipe';
 import { Link, Route, Switch } from 'react-router-dom'
 
@@ -149,3 +150,29 @@ export default withAuth(MyRecipes);
 // }
   
 // export default ViewAll;
+=======
+import { Table, Button } from 'reactstrap';
+import Navbar from './Navbar';
+import ViewRecipe from './ViewRecipe';
+import RecipeTable from './RecipeTable';
+// import Authorization from 'Authorization';
+
+
+
+const ViewAll  = (props) => {
+    return(
+        <Container>
+            <Row>
+                <Col md='3'>
+                    <CreateRecipe fetchRecipes={fectchRecipes} token={props.token} />
+                </Col>
+                <Col md='9'>
+                    <RecipeTable recipes={recipes} fectchRecipes={fetchRecipes} token={props.token}/>
+                </Col>
+                </Row>
+        </Container>
+    )
+}
+
+export default ViewAll;
+>>>>>>> e72d65ebcc1408be68c3d103e907515c06aaab08
