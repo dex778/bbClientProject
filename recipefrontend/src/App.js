@@ -15,6 +15,7 @@ import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
 import CreateRecipe from './components/Recipes/CreateRecipe';
 import ViewRecipe from './components/Recipes/ViewRecipe';
 import RecipePage from './components/Recipes/RecipePage';
+import ViewAll from "./components/Recipes/ViewAll";
 
 function App() {
   const [sessionToken, setSessionToken] = useState('');
@@ -47,8 +48,9 @@ function App() {
         <Route exact path="/createrecipe" component={CreateRecipe}/>
         <Route exact path="/viewrecipe" component={ViewRecipe}/>
         <Route exact path="/recipepage" component={RecipePage}/>
+        <Route exact path='/viewall' component={ViewAll}/>
       </Router>
-      {/* <Authorization updateToken={updateToken}/> */}
+      <Authorization updateToken={updateToken}/>
       {protectedViews()}
       {/* {localStorage.getItem('token') !== null ? <RecipePage href="/recipepage" /> : null} */}
       {/* <RecipePage /> */}
