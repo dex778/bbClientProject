@@ -1,4 +1,4 @@
-import {React, useState} from 'react'
+import React, { useState} from 'react';
 import { Link, Route, Switch } from 'react-router-dom'
 import { Form, FormGroup, Label, Input, Button } from 'reactstrap'
 import ViewRecipe from '../Recipes/ViewRecipe';
@@ -42,12 +42,6 @@ const Login = (props) => {
 
     // }
 
-    const protectedViews = () => {
-    
-
-        return (localStorage.getItem('token') !== null ? <RecipePage /> : null)
-      }
-
     return ( 
        <div>
            <div>
@@ -61,7 +55,7 @@ const Login = (props) => {
                     <Label htmlFor="password">Password</Label>
                     <Input onChange={(e) => setPassword(e.target.value)} name="password" value={password}></Input>
                 </FormGroup>
-                <Button  type="submit" onClick={protectedViews}>Login</Button>
+                <Button  type="submit" >Login</Button>
             </Form>
            
         
