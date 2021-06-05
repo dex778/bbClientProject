@@ -2,9 +2,7 @@ import React, { useEffect, useState } from 'react';
 import * as ReactBootStrap from 'react-bootstrap'
   
 const Navigation = () => {
-  const [isOpen, setIsOpen] = useState(false);
-
-  const toggle = () => setIsOpen(!isOpen);
+  
     return ( 
         <div>
         <ReactBootStrap.Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
