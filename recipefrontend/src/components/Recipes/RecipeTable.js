@@ -25,7 +25,7 @@ const RecipeTable = (props) => {
                     <td>{recipe.name}</td>
                     <td>{recipe.created}</td>
                     <td>
-                        <Button color='primary' onClick={() => {ViewRecipe(recipe)}}>View</Button>
+                        <Button color='primary' onClick={() => {viewRecipes(recipe)}}>View</Button>
                         {/* <Button color='warning' onClick={() => {editRecipe(recipe); props.UpdateOn()}}>Edit</Button> */}
                         <Button color='danger' onClick={() => {deleteRecipe(recipe)}}>Delete</Button>
                     </td>

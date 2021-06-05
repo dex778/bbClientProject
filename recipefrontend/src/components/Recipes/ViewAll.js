@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import { Table, Button, Container, Row, Col } from 'reactstrap';
-import Navbar from './Navbar';
-import CreateRecipe from "./CreateRecipe"
+import { Row, Container, Col  } from 'reactstrap';
+import { Table, Button } from 'reactstrap';
+// import Navigation from '..Navigation/Navbar/Navigation';
+import CreateRecipe from "./CreateRecipe";
+import RecipePage from './RecipePage';
 import ViewRecipe from './ViewRecipe';
 import RecipeTable from './RecipeTable';
 // import Authorization from 'Authorization';
@@ -21,18 +23,18 @@ const ViewAll = (props) => {
             console.log(logData)
         })
     }
-    useEffect(() => {
-        // fetchRepices();
-    }, [])
+        useEffect(() => {
+            fetchRecipes();
+        }, [])
 
         return(
         <Container>
             <Row>
                 <Col md='3'>
-                    {/* <CreateRecipe fetchRecipes={fectchRecipes} token={props.token} /> */}
+                    <CreateRecipe fetchRecipes={fetchRecipes} token={props.token} />
                 </Col>
                 <Col md='9'>
-                    {/* <RecipeTable recipes={recipes} fectchRecipes={fetchRecipes} token={props.token}/> */}
+                    <RecipeTable recipes={recipes} fetchRecipes={fetchRecipes} token={props.token}/>
                 </Col>
                 </Row>
         </Container>
