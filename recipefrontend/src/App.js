@@ -51,7 +51,7 @@ function App() {
         <Route exact path="/recipepage" component={RecipePage}/>
         <Route exact path='/viewall' component={ViewAll}/>
       </Router>
-      {/* <Authorization updateToken={updateToken}/> */}
+      <Authorization updateToken={updateToken}/>
       {protectedViews()}
       {/* {localStorage.getItem('token') !== null ? <RecipePage href="/recipepage" /> : null} */}
       {/* <RecipePage /> */}
