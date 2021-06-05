@@ -1,5 +1,5 @@
 import React from 'react';
-import {  Form, Button } from 'reactstrap';
+import {  Form, FormGroup, Label, Input, Button } from 'reactstrap';
 // import Login from '../LandingPage/Login'
 import ViewRecipe from './ViewRecipe'
 import ViewAll from './ViewAll';
@@ -35,6 +35,21 @@ const RecipePage = (props) => {
 }
 
 const CreateForm = (props) => {
+    fetch('http://localhost:3000/recipe/create', {
+    method: 'POST',
+    headers: new Headers ({
+        'Content-Type' : 'application/json',
+        'Authorization' : props.token
+    }),
+    body: JSON.stringify(newEntry)
+}) 
+.then(response => {
+    console.log(response.json())
+    displayMine()
+})
+.catch((err) => {
+    console.log(err, 'Recipe Not Created')
+})
     return (
       
         <Form>
@@ -68,22 +83,7 @@ const CreateForm = (props) => {
 
 
 
-fetch('http://localhost:3000/recipe/create', {
-    method: 'POST',
-    headers: new Headers ({
-        'Content-Type' : 'application/json',
-        'Authorization' : accessToken
 
-    }),
-    body: JSON.stringify(newEntry)
-}) 
-.then(response => {
-    console.log(response.json())
-    displayMine()
-})
-.catch((err) => {
-    console.log(err, 'Recipe Not Created')
-})
 
 
 export default RecipePage;
