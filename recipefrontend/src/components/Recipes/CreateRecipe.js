@@ -1,8 +1,30 @@
 import React from 'react';
+<<<<<<< HEAD
 import { Link, Route, Switch } from 'react-router-dom';
 
+=======
+import { Link, Route, Switch } from 'react-router-dom'
+import {Form, FormGroup, Label, Input} from 'react';
+>>>>>>> Rachel
 
 import ViewRecipe from './ViewRecipe'
+
+fetch('http://localhost:3000/recipe/create', {
+    method: 'POST',
+    headers: new Headers ({
+        'Content-Type' : 'application/json',
+        'Authorization' : accessToken
+
+    }),
+    body: JSON.stringify(newEntry)
+}) 
+.then(response => {
+    console.log(response.json())
+    displayMine()
+})
+.catch((err) => {
+    console.log(err, 'Recipe Not Created')
+})
 
 const CreateRecipe = () => {
     return ( 
@@ -21,7 +43,7 @@ const CreateRecipe = () => {
 }
 const CreateForm = (props) => {
     return (
-      
+        
         <Form>
             <FormGroup>
                 <Label for="recipetitle">Recipe Title</Label>
@@ -50,22 +72,6 @@ const CreateForm = (props) => {
 )};
 
 
-fetch('http://localhost:3000/recipe/create', {
-    method: 'POST',
-    headers: new Headers ({
-        'Content-Type' : 'application/json',
-        'Authorization' : accessToken
-
-    }),
-    body: JSON.stringify(newEntry)
-}) 
-.then(response => {
-    console.log(response.json())
-    displayMine()
-})
-.catch((err) => {
-    console.log(err, 'Recipe Not Created')
-})
 
 
  
