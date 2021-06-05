@@ -13,21 +13,21 @@ const RecipeTable = (props) => {
         })
         .then(() => props.fetchRecipes())
     }
-
+   
     //check button links below
 
-    const ViewRecipes = () => {
+    const viewRecipes = () => {
         return props.recipes.map((recipe, index) => {
             return(
                 <tr key={index}>
                     <th scope='row'>{recipe.id}</th>
-                    <td>{recipe.result}</td> 
+                    {/* <td>{recipe.result}</td>  */}
                     <td>{recipe.name}</td>
                     <td>{recipe.created}</td>
                     <td>
-                        <Button color='primary' onClick={() => {ViewRecipe(recipe)}}>View</Button>
-                        {/* <Button color='warning' onClick={() => {editRecipe(recipe); props.UpdateOn()}}>Edit</Button>
-                        <Button color='danger' onClick={() => {deleteRecipe(recipe)}}>Delete</Button> */}
+                        <Button color='primary' onClick={() => {viewRecipes(recipe)}}>View</Button>
+                        {/* <Button color='warning' onClick={() => {editRecipe(recipe); props.UpdateOn()}}>Edit</Button> */}
+                        <Button color='danger' onClick={() => {deleteRecipe(recipe)}}>Delete</Button>
                     </td>
                 </tr>
             )
@@ -46,7 +46,7 @@ const RecipeTable = (props) => {
                 </tr>
             </thead>
             <tbody>
-            
+            {viewRecipes()}
             </tbody>
         </Table>
         </div>
