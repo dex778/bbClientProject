@@ -37,7 +37,8 @@ function App() {
   const protectedViews = () => {
     
 
-    return (sessionToken === localStorage.getItem('token') ? <RecipePage token={sessionToken}/> : <Authorization updateToken={updateToken}/>)
+    return (sessionToken === localStorage.getItem('token') ? <RecipePage token={sessionToken}/> : 
+    <Authorization updateToken={updateToken}/>)
   }
 
   return (

@@ -1,7 +1,15 @@
 import React, { useState, useEffect } from 'react';
+<<<<<<< HEAD
 import { Table, Button, Container, Row, Col } from 'reactstrap';
 import Navbar from './Navbar';
 import CreateRecipe from "./CreateRecipe"
+=======
+import { Row, Container, Col  } from 'reactstrap';
+import { Table, Button } from 'reactstrap';
+// import Navigation from '..Navigation/Navbar/Navigation';
+import CreateRecipe from "./CreateRecipe";
+import RecipePage from './RecipePage';
+>>>>>>> 12d584739abf802ab6c6839eea5f84da9f1a4041
 import ViewRecipe from './ViewRecipe';
 import RecipeTable from './RecipeTable';
 // import Authorization from 'Authorization';
@@ -21,18 +29,31 @@ const ViewAll = (props) => {
             console.log(logData)
         })
     }
+<<<<<<< HEAD
     useEffect(() => {
         // fetchRepices();
     }, [])
+=======
+        useEffect(() => {
+            fetchRecipes();
+        }, [])
+>>>>>>> 12d584739abf802ab6c6839eea5f84da9f1a4041
 
         return(
         <Container>
             <Row>
                 <Col md='3'>
+<<<<<<< HEAD
                     {/* <CreateRecipe fetchRecipes={fectchRecipes} token={props.token} /> */}
                 </Col>
                 <Col md='9'>
                     {/* <RecipeTable recipes={recipes} fectchRecipes={fetchRecipes} token={props.token}/> */}
+=======
+                    <CreateRecipe fetchRecipes={fetchRecipes} token={props.token} />
+                </Col>
+                <Col md='9'>
+                    <RecipeTable recipes={recipes} fetchRecipes={fetchRecipes} token={props.token}/>
+>>>>>>> 12d584739abf802ab6c6839eea5f84da9f1a4041
                 </Col>
                 </Row>
         </Container>

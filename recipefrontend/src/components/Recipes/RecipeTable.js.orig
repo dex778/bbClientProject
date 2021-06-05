@@ -25,7 +25,11 @@ const RecipeTable = (props) => {
                     <td>{recipe.name}</td>
                     <td>{recipe.created}</td>
                     <td>
+<<<<<<< HEAD
                         <Button color='primary' onClick={() => {ViewRecipe(recipe)}}>View</Button>
+=======
+                        <Button color='primary' onClick={() => {viewRecipes(recipe)}}>View</Button>
+>>>>>>> 12d584739abf802ab6c6839eea5f84da9f1a4041
                         {/* <Button color='warning' onClick={() => {editRecipe(recipe); props.UpdateOn()}}>Edit</Button> */}
                         <Button color='danger' onClick={() => {deleteRecipe(recipe)}}>Delete</Button>
                     </td>
