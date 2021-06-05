@@ -17,8 +17,15 @@ const RecipeTable = (props) => {
 
     //check button links below
 
+<<<<<<< HEAD
     const ViewRecipes = () => {
         return props.recipes.map((recipe, index) => {
+=======
+
+    const ViewRecipes = () => {
+        return props.recipes.map((recipe, index) => {
+
+>>>>>>> 42af3cc0240f0515cf5b92c87e43133896744bca
             return(
                 <tr key={index}>
                     <th scope='row'>{recipe.id}</th>
