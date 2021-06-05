@@ -9,6 +9,7 @@ import Authorization from '../src/components/LandingPage/Authorization';
 
 import Header from './components/LandingPage/Header'
 import Footer from './components/LandingPage/Footer'
+import Background from './components/LandingPage/Background'
 
 
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
@@ -40,8 +41,11 @@ function App() {
   }
 
   return (
-    <div className="App">
-      <Header />
+    <div className="page-container">
+      <div className="content-wrap">
+
+      <Background />
+      <Navigation />
       {/* <Navigation /> */}
       <Router>
         <Route exact path="/" component={Home}/>
@@ -50,12 +54,13 @@ function App() {
         <Route exact path="/recipepage" component={RecipePage}/>
         <Route exact path='/viewall' component={ViewAll}/>
       </Router>
-      <Authorization updateToken={updateToken}/>
+
       {protectedViews()}
       {/* {localStorage.getItem('token') !== null ? <RecipePage href="/recipepage" /> : null} */}
       {/* <RecipePage /> */}
+      </div>
       <Footer />
-
+      
     </div>
   );
 }

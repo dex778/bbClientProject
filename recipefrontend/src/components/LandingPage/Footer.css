@@ -1,0 +1,21 @@
+/* footer */
+footer {
+    background-color: #FFA833;
+    color: white;
+    position: relative;
+    margin-top: 10px;
+    bottom: 0;
+    height: 100px;
+  }
+  
+  footer p {
+    margin-top: 0.8em!important;
+    margin-left: 1.5em;
+  }
+
+  .name{
+      text-align: center;
+      font-size:x-large ;
+      /* border: 2px solid black; */
+      padding-top: 20px;
+  }

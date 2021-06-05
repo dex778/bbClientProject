@@ -1,15 +1,16 @@
 import React from 'react';
 import { Row } from "reactstrap";
+import './Footer.css';
 
 
 function Footer() {
     return (
-        <footer>
-            <Row>
-                <p>&copy; Recipe Champ</p>
-            </Row>
+        <footer className="main-footer">
+                <p className="name">
+                    &copy; Recipe Champ
+                </p>
         </footer>
     )
 }
 
-export default Footer
+export default Footer;
