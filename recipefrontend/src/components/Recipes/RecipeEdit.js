@@ -6,7 +6,7 @@ const RecipeEdit = (props) => {
     const [editTime, setEditTime] = useState(props.recipeToUpdate.time)
     const [editIngredients, setEditIngredients] = useState(props.recipeToUpdate.ingredients);
     const [editPreparation, setEditPreparation] = useState(props.recipeToUpdate.preparation);
-    // const [editOwner, setEditOwner] = useState(props.recipeToUpdate.owner);
+
     const recipeUpdate = (event, recipe) => {
         event.preventDefault();
         fetch(`http://localhost:3000/Recipes/${props.recipeToUpdate.id}`, {
