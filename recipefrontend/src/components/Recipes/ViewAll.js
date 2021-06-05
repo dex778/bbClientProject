@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Table, Button } from 'reactstrap';
+import { Table, Button, Container, Row, Col } from 'reactstrap';
 import Navbar from './Navbar';
 import CreateRecipe from "./CreateRecipe"
 import ViewRecipe from './ViewRecipe';
@@ -21,17 +21,17 @@ const ViewAll = (props) => {
         })
     }
     useEffect(() => {
-        fetchRepices();
+        // fetchRepices();
     }, [])
 
     return(
         <Container>
             <Row>
                 <Col md='3'>
-                    <CreateRecipe fetchRecipes={fectchRecipes} token={props.token} />
+                    {/* <CreateRecipe fetchRecipes={fectchRecipes} token={props.token} /> */}
                 </Col>
                 <Col md='9'>
-                    <RecipeTable recipes={recipes} fectchRecipes={fetchRecipes} token={props.token}/>
+                    {/* <RecipeTable recipes={recipes} fectchRecipes={fetchRecipes} token={props.token}/> */}
                 </Col>
                 </Row>
         </Container>
