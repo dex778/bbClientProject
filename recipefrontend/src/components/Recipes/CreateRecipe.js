@@ -1,11 +1,8 @@
 import React from 'react';
-<<<<<<< HEAD
-import { Link, Route, Switch } from 'react-router-dom';
-
-=======
 import { Link, Route, Switch } from 'react-router-dom'
-import {Form, FormGroup, Label, Input} from 'react';
->>>>>>> Rachel
+import {Form, FormGroup, Label, Input} from 'reactstrap';
+// import { Input } from 'reactstrap'
+
 
 import ViewRecipe from './ViewRecipe'
 
