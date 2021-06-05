@@ -16,6 +16,7 @@ const RecipeTable = (props) => {
    
     //check button links below
 
+
     const viewRecipes = () => {
         return props.recipes.map((recipe, index) => {
             return(
