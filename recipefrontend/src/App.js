@@ -18,6 +18,7 @@ import ViewRecipe from './components/Recipes/ViewRecipe';
 import RecipePage from './components/Recipes/RecipePage';
 import ViewAll from "./components/Recipes/ViewAll";
 
+
 function App() {
   const [sessionToken, setSessionToken] = useState('');
 
@@ -47,22 +48,20 @@ function App() {
 
       <Background />
       <Navigation />
-      {/* <Navigation /> */}
       <Router>
         <Route exact path="/" component={Home}/>
         <Route exact path="/createrecipe" component={CreateRecipe}/>
         <Route exact path="/viewrecipe" component={ViewRecipe}/>
-        <Route exact path="/recipepage" component={RecipePage}/>
+        {/* <Route exact path="/recipepage" component={RecipePage}/> */}
         <Route exact path='/viewall' component={ViewAll}/>
       </Router>
-
       {protectedViews()}
-      {/* {localStorage.getItem('token') !== null ? <RecipePage href="/recipepage" /> : null} */}
-      {/* <RecipePage /> */}
+      
       </div>
       <Footer />
       
     </div>
+    
   );
 }
 
