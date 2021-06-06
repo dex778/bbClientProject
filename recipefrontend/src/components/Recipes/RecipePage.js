@@ -39,7 +39,18 @@ const RecipePage = (props) => {
     })
     }
     
+    const ButtonSubmit = (e) => {
+        e.preventDefault()
+        console.log('I am working!!!')
+        return (
+            
+                
+                <Route exact path="/viewrecipe" component={() => <ViewRecipe/>} /> 
+                
+        )
+    }
 
+   
     return (
         <div>
             <h1>This is the Recipe Landing/Create Page</h1>
@@ -61,10 +72,9 @@ const RecipePage = (props) => {
              <Label for="time">Preparation Time</Label>
             <Input name="time" value={time} onChange={(e) => setTime(e.target.value)} />
          </FormGroup>
-         <button type="submit">Create Recipe</button>
-            
+         <button type="submit">Save Recipe</button>
          </Form>
-            {/* <Button to={ViewAll}>View All</Button> */}
+           <button onClick={ButtonSubmit}>Next Page</button>
             {/* <Router>
             <Switch>
             <Route exact path = '/ViewRecipe' component={ViewRecipe}/>
@@ -73,6 +83,12 @@ const RecipePage = (props) => {
             <Link to="/ViewAll" component={ViewAll}>
             </Link>
             </Router> */}
+            <div>
+                <div>
+
+                </div>
+            </div>
+
         </div>
     );
 }

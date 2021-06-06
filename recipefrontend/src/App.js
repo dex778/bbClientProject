@@ -48,7 +48,6 @@ function App() {
 
       <Background />
       <Navigation />
-      {/* <Navigation /> */}
       <Router>
         <Route exact path="/" component={Home}/>
         <Route exact path="/createrecipe" component={CreateRecipe}/>
@@ -56,14 +55,13 @@ function App() {
         {/* <Route exact path="/recipepage" component={RecipePage}/> */}
         <Route exact path='/viewall' component={ViewAll}/>
       </Router>
-      {/* <RecipePage /> */}
       {protectedViews()}
-      {/* {localStorage.getItem('token') !== null ? <RecipePage href="/recipepage" /> : null} */}
-      {/* <RecipePage /> */}
+      
       </div>
       <Footer />
       
     </div>
+    
   );
 }
 

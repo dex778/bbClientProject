@@ -1,12 +1,12 @@
-// import React from 'react';
+import React from 'react';
 
-// const ViewRecipe = () => {
+const ViewRecipe = () => {
 
-//     return ( 
-//         <div>
-//             <h1>View Recipes</h1>
-//         </div>
-//      );
-// }
+    return ( 
+        <div>
+            <h1>View Recipes</h1>
+        </div>
+     );
+}
  
-// export default ViewRecipe;
+export default ViewRecipe;

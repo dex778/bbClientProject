@@ -8,7 +8,7 @@
 // import RecipeTable from './RecipeTable';
 // // import Authorization from 'Authorization';
 
-// const ViewAll = (props) => {
+const ViewAll = (props) => {
 //     const [recipes, setRecipes] = useState([]);
 //     const fetchRecipes = () => {
 //         fetch('http://localhost:3000/recipe/my-recipes', {
@@ -27,7 +27,7 @@
 //             fetchRecipes();
 //         }, [])
 
-//         return(
+        return(
 //         <Container>
 //             <Row>
 //                 <Col md='3'>
@@ -38,7 +38,9 @@
 //                 </Col>
 //                 </Row>
 //         </Container>
-//         )}  
+<div></div>
+        )
+    }  
 
 
-// export default ViewAll;
+export default ViewAll;
