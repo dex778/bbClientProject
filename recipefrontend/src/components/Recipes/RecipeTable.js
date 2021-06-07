@@ -1,10 +1,11 @@
 import React from 'react';
 import { Table, Button } from 'reactstrap';
-import ViewRecipe from './ViewRecipe';
+
 
 const RecipeTable = (props) => {
+    console.log(props.token)
     const deleteRecipe = (recipe) => {
-        fetch(`http://localhost:3000/Recipes/${recipe.id}`, { //is link correct? 
+        fetch(`http://localhost:3000/recipe/delete/${recipe.id}`, { //is link correct? 
             method: 'DELETE',
             headers: new Headers({
                 'Content-Type': 'application/json',
@@ -18,21 +19,26 @@ const RecipeTable = (props) => {
 
 
     const viewRecipes = () => {
-        return props.recipes.map((recipe, index) => {
-            return(
-                <tr key={index}>
-                    <th scope='row'>{recipe.id}</th>
-                    {/* <td>{recipe.result}</td>  */}
-                    <td>{recipe.name}</td>
-                    <td>{recipe.created}</td>
-                    <td>
-                        <Button color='primary' onClick={() => {viewRecipes(recipe)}}>View</Button>
-                        {/* <Button color='warning' onClick={() => {editRecipe(recipe); props.UpdateOn()}}>Edit</Button> */}
-                        <Button color='danger' onClick={() => {deleteRecipe(recipe)}}>Delete</Button>
-                    </td>
-                </tr>
-            )
-        })
+        // console.log('Code', props.recipes)
+        if(props.recipe !== undefined) {
+            return props.recipe.map((recipe, index) => {
+                return(
+                    <tr key={index}>
+                        <th scope='row'>{recipe.id}</th>
+                        { <td>{recipe.name}</td>  }
+                        <td>{recipe.preparation}</td>
+                        <td>{recipe.ingredients}</td>
+                        <td>{recipe.time}</td>
+    
+                        <td>
+                            {<Button color='warning' onClick={() => {props.editUpdateRecipe(recipe) ; props.updateOn()}}>Edit</Button> }
+                            <Button color='danger' onClick={() => {deleteRecipe(recipe)}}>Delete</Button>
+                        </td>
+                    </tr>
+                )
+            })
+        }
+        
     }
     return(
        <div>
@@ -43,7 +49,9 @@ const RecipeTable = (props) => {
                 <tr>
                     <th>#</th>
                     <th>Name</th>
-                    <th>Date Created</th>
+                    <th>Preparation</th>
+                    <th>Ingredients</th>
+                    <th>Time</th>
                 </tr>
             </thead>
             <tbody>

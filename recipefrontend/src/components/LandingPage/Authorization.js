@@ -3,7 +3,7 @@ import {Container, Row, Col} from 'reactstrap';
 import Login from './Login'
 import Signup from './Signup'
 
-const Authorize = (props) => {
+const Authorization = (props) => {
 
 
     return ( 
@@ -20,4 +20,4 @@ const Authorize = (props) => {
      );
 }
  
-export default Authorize;
+export default Authorization;

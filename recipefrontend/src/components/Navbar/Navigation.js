@@ -1,17 +1,19 @@
 import React, { useEffect, useState } from 'react';
 import * as ReactBootStrap from 'react-bootstrap'
+import { propTypes } from 'react-bootstrap/esm/Image';
+import './Navigation.css'
   
-const Navigation = () => {
+const Navigation = (props) => {
   
     return ( 
         <div>
         <ReactBootStrap.Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
-    <ReactBootStrap.Navbar.Brand href="#home">Recipe Champ</ReactBootStrap.Navbar.Brand>
+    <ReactBootStrap.Navbar.Brand href="/">Recipe Champ</ReactBootStrap.Navbar.Brand>
   <ReactBootStrap.Navbar.Toggle aria-controls="responsive-navbar-nav" />
   <ReactBootStrap.Navbar.Collapse id="responsive-navbar-nav">
     <ReactBootStrap.Nav className="mr-auto">
-      <ReactBootStrap.Nav.Link href="#features">Sign Up</ReactBootStrap.Nav.Link>
-      <ReactBootStrap.Nav.Link href="#pricing">Login</ReactBootStrap.Nav.Link>
+      <ReactBootStrap.Nav.Link href="/">Sign Up</ReactBootStrap.Nav.Link>
+      <ReactBootStrap.Nav.Link href="/">Login</ReactBootStrap.Nav.Link>
       <ReactBootStrap.NavDropdown title="More Links" id="collasible-nav-dropdown">
         <ReactBootStrap.NavDropdown.Item href="#action/3.1">Action</ReactBootStrap.NavDropdown.Item>
         <ReactBootStrap.NavDropdown.Item href="#action/3.2">Another action</ReactBootStrap.NavDropdown.Item>
@@ -21,9 +23,9 @@ const Navigation = () => {
       </ReactBootStrap.NavDropdown>
     </ReactBootStrap.Nav>
     <ReactBootStrap.Nav>
-      <ReactBootStrap.Nav.Link href="#deets">More deets</ReactBootStrap.Nav.Link>
-      <ReactBootStrap.Nav.Link eventKey={2} href="#memes">
-        Dank memes
+      <ReactBootStrap.Nav.Link onClick={props.logout}>Logout</ReactBootStrap.Nav.Link>
+      <ReactBootStrap.Nav.Link eventKey={2} href="https://tasty.co/" target="_blank" >
+        Food Recipes
       </ReactBootStrap.Nav.Link>
     </ReactBootStrap.Nav>
   </ReactBootStrap.Navbar.Collapse>
