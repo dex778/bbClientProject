@@ -7,11 +7,11 @@ const Home = (props) => {
     return ( 
         <div>
            <div>
-               {/* <Authorization updateToken={props.updateToken}/> */}
+               <h1>Welcome, would you like to create a recipe?</h1>
            </div>
            
            <div>
-               
+               <Link to='/recipepage'>Next Page</Link>
            </div>
 
              

@@ -8,16 +8,23 @@ const RecipeEdit = (props) => {
     const [editPreparation, setEditPreparation] = useState(props.recipeToUpdate.preparation);
 
     const recipeUpdate = (event, recipe) => {
+    console.log(props.token)
+
         event.preventDefault();
-        fetch(`http://localhost:3000/Recipes/${props.recipeToUpdate.id}`, {
+        fetch(`http://localhost:3000/recipe/update/${props.recipeToUpdate.id}`, {
             method: 'PUT',
-            body: JSON.stringify({recipe: {name: editName, time: editTime, ingredients: editIngredients, preparation: editPreparation}}),
+            body: JSON.stringify({ 
+                name: editName, 
+                ingredients: editIngredients, 
+                preparation: editPreparation, 
+                time: editTime
+            }),
             headers: new Headers({
                 'Content-Type': 'application/json',
                 'Authorization': props.token
             })
         })  .then((res) => {
-            props.fetchRecipe();
+            props.fetchRecipes();
             props.updateOff();
         })
     

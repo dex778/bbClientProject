@@ -1,13 +1,7 @@
 import React, { useState} from 'react';
-import { Link, Route, Switch } from 'react-router-dom'
 import { Form, FormGroup, Label, Input, Button } from 'reactstrap'
-import ViewRecipe from '../Recipes/ViewRecipe';
-import CreateRecipe from '../Recipes/CreateRecipe';
-import RecipePage from '../Recipes/RecipePage'
-
 
 const Login = (props) => {
-
     const [username, setUserName] = useState('');
     const [password, setPassword] = useState('');
 
@@ -21,6 +15,7 @@ const Login = (props) => {
                 }),
             headers: new Headers({
                 'Content-Type': 'application/json',
+                'Access-Control-Allow-Origin': '*'
                 // 'Authorizaton': 'props.updateToken'
             })
         }).then(
@@ -33,14 +28,6 @@ const Login = (props) => {
 
     }
 
-    // const NewPage = () => {
-
-    //     return (
-    //         <Link to={CreateRecipe}></Link>
-    //     )
-        
-
-    // }
 
     return ( 
        <div>

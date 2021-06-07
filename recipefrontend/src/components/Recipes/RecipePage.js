@@ -1,13 +1,12 @@
 import {React, useState} from 'react';
 import {  Form, FormGroup, Label, Input, Button } from 'reactstrap';
 // import Login from '../LandingPage/Login'
-import ViewRecipe from './ViewRecipe'
-import ViewAll from './ViewAll';
+
 import { BrowserRouter as Router, Switch, Route, Link} from 'react-router-dom';
 import e from 'cors';
 
 const RecipePage = (props) => {
-
+    // console.log(props)
     const [name, setName] = useState('');
     const [ingredients, setIngredients] = useState('');
     const [preparation, setPreparation] = useState('');
@@ -17,17 +16,22 @@ const RecipePage = (props) => {
         e.preventDefault();
         fetch('http://localhost:3000/recipe/create', {
         method: 'POST',
+        body: JSON.stringify({ 
+            name: name, 
+            ingredients: ingredients, 
+            preparation: preparation, 
+            time: time
+        }),
         headers: new Headers ({
             'Content-Type' : 'application/json',
-            'Authorization' : props.token
+            'Authorization' : props.sessionToken,
+            'Access-Control-Allow-Origin': '*'   
         }),
-        body: JSON.stringify({recipe: 
-            {name: name, ingredients: ingredients, preparation: preparation, time: time}})
+        
     })
-    .then(response => response.json())
-    
-    .then((logData) => {
-        console.log(logData)
+    .then((response) => response.json())
+    .then(data => {
+        console.log(data)
         setName('');
         setPreparation('');
         setIngredients('');
@@ -39,18 +43,6 @@ const RecipePage = (props) => {
     })
     }
     
-    const ButtonSubmit = (e) => {
-        e.preventDefault()
-        console.log('I am working!!!')
-        return (
-            
-                
-                <Route exact path="/viewrecipe" component={() => <ViewRecipe/>} /> 
-                
-        )
-    }
-
-   
     return (
         <div>
             <h1>This is the Recipe Landing/Create Page</h1>
@@ -71,18 +63,12 @@ const RecipePage = (props) => {
          <FormGroup>
              <Label for="time">Preparation Time</Label>
             <Input name="time" value={time} onChange={(e) => setTime(e.target.value)} />
-         </FormGroup>
+         
          <button type="submit">Save Recipe</button>
+         </FormGroup>
          </Form>
-           <button onClick={ButtonSubmit}>Next Page</button>
-            {/* <Router>
-            <Switch>
-            <Route exact path = '/ViewRecipe' component={ViewRecipe}/>
-            <Route exact path = '/ViewAll' component={ViewAll}/>
-             </Switch>
-            <Link to="/ViewAll" component={ViewAll}>
-            </Link>
-            </Router> */}
+           <Link to='/recipes'>View Recipes</Link>
+            
             <div>
                 <div>
 
@@ -98,30 +84,6 @@ const RecipePage = (props) => {
 
 export default RecipePage;
 
-//     return (
-//         <div>
-//             <h1>This is the Recipe Landing/Create Page</h1>
-//             <Button to={ViewRecipe}>View Recipe</Button>
-//             <Button to={ViewAll}>View All</Button>
-//             <Router>
 
-//             {/* <Login /> */}
-//             <Switch>
-//             <Route exact path = '/ViewRecipe' component={ViewRecipe}/>
-//             <Route exact path = '/ViewAll' component={ViewAll}/>
-//              <Route exact path = '/ViewAll' component={ViewAll}/>
-//              </Switch>
-             
-//             <Link to="/ViewAll" component={ViewAll}>
-
-             
-//             </Link>
-           
-        
-//             </Router>
-//         </div>
-        
-//     );
-// }
 
 
