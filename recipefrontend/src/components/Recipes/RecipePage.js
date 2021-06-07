@@ -45,7 +45,7 @@ const RecipePage = (props) => {
     
     return (
         <div>
-            <h1>This is the Recipe Landing/Create Page</h1>
+            <h1>Create your Recipe!</h1>
             <Form onSubmit={handleSubmit}>
             <FormGroup>
                  <Label for="recipetitle">Recipe Title</Label>
