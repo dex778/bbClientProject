@@ -10,7 +10,8 @@ import RecipeTable from './RecipeTable';
 
 const ViewAll = (props) => {
     const [recipes, setRecipes] = useState([]);
-    const fetchRecipes = () => {
+    const fetchRecipes = (e) => {
+    e.preventDefault();
         fetch('http://localhost:3000/recipe/my-recipes', {
             method: 'GET',
             headers: new Headers ({

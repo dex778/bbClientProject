@@ -23,7 +23,7 @@ const Sitebar = (props) => {
         </ReactBootStrap.NavDropdown>
       </ReactBootStrap.Nav>
       <ReactBootStrap.Nav>
-        <ReactBootStrap.Nav.Link href="#deets">More deets</ReactBootStrap.Nav.Link>
+        <ReactBootStrap.Nav.Link onClick={}>Logout</ReactBootStrap.Nav.Link>
         <ReactBootStrap.Nav.Link eventKey={2} href="#memes">
           Dank memes
         </ReactBootStrap.Nav.Link>

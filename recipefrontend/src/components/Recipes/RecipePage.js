@@ -1,89 +1,89 @@
-import React from 'react';
+import {React, useState} from 'react';
 import {  Form, FormGroup, Label, Input, Button } from 'reactstrap';
 // import Login from '../LandingPage/Login'
-import ViewRecipe from './ViewRecipe'
-import ViewAll from './ViewAll';
-import { BrowserRouter as Router, Switch, Route, Link} from 'react-router-dom';
 
+import { BrowserRouter as Router, Switch, Route, Link} from 'react-router-dom';
+import e from 'cors';
 
 const RecipePage = (props) => {
-
+    // console.log(props)
+    const [name, setName] = useState('');
+    const [ingredients, setIngredients] = useState('');
+    const [preparation, setPreparation] = useState('');
+    const [time, setTime] = useState('');
+    
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        fetch('http://localhost:3000/recipe/create', {
+        method: 'POST',
+        body: JSON.stringify({ 
+            name: name, 
+            ingredients: ingredients, 
+            preparation: preparation, 
+            time: time
+        }),
+        headers: new Headers ({
+            'Content-Type' : 'application/json',
+            'Authorization' : props.sessionToken,
+            'Access-Control-Allow-Origin': '*'   
+        }),
+        
+    })
+    .then((response) => response.json())
+    .then(data => {
+        console.log(data)
+        setName('');
+        setPreparation('');
+        setIngredients('');
+        setTime('');
+        props.fetchRecipes();
+        })
+    .catch((err) => {
+        console.log(err, 'Recipe Not Created')
+    })
+    }
+    
     return (
         <div>
             <h1>This is the Recipe Landing/Create Page</h1>
-            <Button to={ViewRecipe}>View Recipe</Button>
-            <Button to={ViewAll}>View All</Button>
-            <Router>
-
-            {/* <Login /> */}
-            <Switch>
-            <Route exact path = '/ViewRecipe' component={ViewRecipe}/>
-            <Route exact path = '/ViewAll' component={ViewAll}/>
-             <Route exact path = '/ViewAll' component={ViewAll}/>
-             </Switch>
-             
-            <Link to="/ViewAll" component={ViewAll}>
-
-             
-            </Link>
-           
-        
-            </Router>
-        </div>
-        
-    );
-}
-
-const CreateForm = (props) => {
-    fetch('http://localhost:3000/recipe/create', {
-    method: 'POST',
-    headers: new Headers ({
-        'Content-Type' : 'application/json',
-        'Authorization' : props.token
-    }),
-    body: JSON.stringify(newEntry)
-}) 
-.then(response => {
-    console.log(response.json())
-    displayMine()
-})
-.catch((err) => {
-    console.log(err, 'Recipe Not Created')
-})
-    return (
-      
-        <Form>
+            <Form onSubmit={handleSubmit}>
             <FormGroup>
-                <Label for="recipetitle">Recipe Title</Label>
-                <Input type="textarea" name="recipetext" id="examplerecipe" />
-            </FormGroup>
+                 <Label for="recipetitle">Recipe Title</Label>
+                 <Input name="name" value={name} onChange={(e) => setName(e.target.value)} />
+             </FormGroup>
          
          <FormGroup>
              <Label for="ingredientlist">Ingredients</Label>
-             <Input type="textarea" name="ingredientse" id="ingredientrecipe" />
-         </FormGroup>
+              <Input name="ingredients" value={ingredients} onChange={(e) => setIngredients(e.target.value)} />
+          </FormGroup>
          <FormGroup>
              <Label for="prep">Preparation Instructions</Label>
-             <Input type="textarea" name="pi" id="pie" />
-         </FormGroup>
-             <FormGroup>
-             <Label for="owner">Recipe Owner</Label>
-             <Input type="textarea" name="ro" id="roe" />
+             <Input name="preparation" value={preparation} onChange={(e) => setPreparation(e.target.value)}/>
          </FormGroup>
          <FormGroup>
              <Label for="time">Preparation Time</Label>
-             <Input type="textarea" name="pt" id="pty" />
+            <Input name="time" value={time} onChange={(e) => setTime(e.target.value)} />
+         
+         <button type="submit">Save Recipe</button>
          </FormGroup>
-   
-        </Form>
+         </Form>
+           <Link to='/recipes'>View Recipes</Link>
+            
+            <div>
+                <div>
 
-)};
+                </div>
+            </div>
 
-
-
-
+        </div>
+    );
+}
 
 
 
 
 export default RecipePage;
+
+
+
+
