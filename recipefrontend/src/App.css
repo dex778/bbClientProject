@@ -1,0 +1,43 @@
+.body{
+  background-image: url("https://www.pexels.com/photo/flat-lay-photography-of-vegetable-salad-on-plate-1640777/");
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+/* header */
+.header {
+  margin-top: 0.5em!important;
+  text-align: center;
+  background-color: #53565A;
+  color: white;
+}
+
+.header a {
+  color: white;
+}
+
+.header p {
+  margin-top: 0.8em!important;
+}
+
+.page-container{
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.content-wrap{
+  flex: 1;
+}
