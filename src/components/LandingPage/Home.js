@@ -5,7 +5,7 @@ import Authorization from './Authorization'
 
 const Home = (props) => {
     return ( 
-        <div>
+        <div className="home">
            <div>
                <h1>Welcome, would you like to create a recipe?</h1>
            </div>

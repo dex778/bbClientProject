@@ -1,6 +1,6 @@
-.body{
+/* .body{
   background-image: url("https://www.pexels.com/photo/flat-lay-photography-of-vegetable-salad-on-plate-1640777/");
-}
+} */
 
 .App-link {
   color: #61dafb;
@@ -31,13 +31,24 @@
 .header p {
   margin-top: 0.8em!important;
 }
-
-.page-container{
+ 
+.page-container {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  background-image: url(./components/Assets/bg1.jpg);
+  background-size: cover;
 }
 
-.content-wrap{
+.content-wrap {
   flex: 1;
+}
+
+.landing {
+  padding-top: 200px;
+}
+
+.home {
+  text-align: center;
+  color:black
 }
