@@ -1,10 +1,13 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Form, FormGroup, Label, Input, Button } from 'reactstrap';
 import APIURL from '../../helpers/environment'
 
 const Signup = (props) => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
+    const [passlength, setPasslength] = useState(null);
+
+    requiredLength = 8
 
     let handleSubmit = (event) => {
         event.preventDefault();
@@ -28,6 +31,12 @@ const Signup = (props) => {
         })
     }
 
+    useEffect(() => {
+        setPasslength(password.length < requiredLength ? true : alert('Your password is too short'))
+        // setValidLength(firstPassword.length >= requiredLength ? true : false)
+
+    },[])
+
     return(
         <div>
             <h1>Sign up</h1>
@@ -38,7 +47,7 @@ const Signup = (props) => {
                 </FormGroup>
                 <FormGroup>
                     <Label htmlFor="password">Password</Label>
-                    <Input onChange={(e) => setPassword(e.target.value)} name="password" value={password}></Input>
+                    <Input type="password" onChange={(e) => setPassword(e.target.value)} name="password" value={password}></Input>
                     <button type="submit" >Signup</button>
                 </FormGroup>
             </Form>
