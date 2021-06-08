@@ -59,6 +59,7 @@ const RecipeTable = (props) => {
             {viewRecipes()}
             </tbody>
         </Table>
+        <Link to='/recipepage'>Create Recipe</Link>
         </div>
     )
 }
