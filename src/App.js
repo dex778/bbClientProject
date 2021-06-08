@@ -34,10 +34,13 @@ function App() {
           {sessionToken === localStorage.getItem('token') ? (
             <>
               <Route exact path="/" component={Home} />
+            {<Route exact path='/recipepage' render={(props) => (<RecipePage {...props} sessionToken={sessionToken} />
+              )}/>}
+              
               {<Route exact path='/recipes' render={(props) => (<RecipeIndex {...props} sessionToken={sessionToken} />
               )}/>}
-              {<Route exact path='/recipepage' render={(props) => (<RecipePage {...props} sessionToken={sessionToken} />
-              )}/>}
+              
+
               <Route exact path='/recipeTable' component={RecipeTable} />
             </>
           ) : <Authorization updateToken={updateToken} />}
