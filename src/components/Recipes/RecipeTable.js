@@ -1,6 +1,7 @@
 import React from 'react';
-import { Table, Button, Link } from 'reactstrap';
-import APIURL from '../../helpers/environment'
+import { Table, Button } from 'reactstrap';
+import APIURL from '../../helpers/environment';
+import { Link } from 'react-router-dom'
 
 
 const RecipeTable = (props) => {
