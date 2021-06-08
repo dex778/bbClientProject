@@ -60,10 +60,7 @@ const RecipeTable = (props) => {
             </tbody>
         </Table>
         <Link to='/recipepage'>Create Recipe</Link>
-<<<<<<< HEAD
 
-=======
->>>>>>> b10d61bbf0e4246275236da2ffdace281d0a2cc3
         </div>
     )
 }
