@@ -1,11 +1,12 @@
 import React from 'react';
 import { Table, Button } from 'reactstrap';
+import APIURL from '../../helpers/environment'
 
 
 const RecipeTable = (props) => {
     console.log(props.token)
     const deleteRecipe = (recipe) => {
-        fetch(`http://localhost:3000/recipe/delete/${recipe.id}`, { //is link correct? 
+        fetch(`${APIURL}/recipe/delete/${recipe.id}`, { //is link correct? 
             method: 'DELETE',
             headers: new Headers({
                 'Content-Type': 'application/json',

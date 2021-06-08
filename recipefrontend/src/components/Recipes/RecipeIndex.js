@@ -4,6 +4,7 @@ import {Container, Row, Col} from 'reactstrap';
 import RecipeTable from './RecipeTable';
 import RecipeEdit from './RecipeEdit';
 // import RecipePage from './RecipePage'
+import APIURL from '../../helpers/environment'
 
 
 const RecipeIndex = (props) => {
@@ -14,7 +15,7 @@ const RecipeIndex = (props) => {
     const [recipeToUpdate, setRecipeToUpdate] = useState([]);
 
     const fetchRecipes = () => {
-        fetch('http://localhost:3000/recipe/my-recipes', {
+        fetch(`${APIURL}/recipe/my-recipes`, {
             method: 'GET',
             headers: new Headers ({
                 'Content-Type': 'application/json',
