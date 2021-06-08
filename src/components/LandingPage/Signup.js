@@ -9,7 +9,7 @@ const Signup = (props) => {
     // const [userlength, setUserlength] = useState(null);
 
 
-    const requiredLength = 5
+    // const requiredLength = 5
 
     let handleSubmit = (event) => {
         event.preventDefault();
@@ -33,12 +33,12 @@ const Signup = (props) => {
         })
     }
 
-    useEffect(() => {
-        setPassword(password.length < requiredLength ? true : alert('Your password is too short'));
-        setUsername(username.length < requiredLength ? true : alert('Your username is too short'));
-        // setValidLength(firstPassword.length >= requiredLength ? true : false)
+    // useEffect(() => {
+    //     setPassword(password.length < requiredLength ? true : alert('Your password is too short'));
+    //     setUsername(username.length < requiredLength ? true : alert('Your username is too short'));
+    //     setValidLength(firstPassword.length >= requiredLength ? true : false)
 
-    },[])
+    // },[])
 
     return(
         <div>
