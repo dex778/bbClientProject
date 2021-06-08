@@ -5,9 +5,11 @@ import APIURL from '../../helpers/environment'
 const Signup = (props) => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
-    const [passlength, setPasslength] = useState(null);
+    // const [passlength, setPasslength] = useState(null);
+    // const [userlength, setUserlength] = useState(null);
 
-    requiredLength = 8
+
+    const requiredLength = 5
 
     let handleSubmit = (event) => {
         event.preventDefault();
@@ -32,7 +34,8 @@ const Signup = (props) => {
     }
 
     useEffect(() => {
-        setPasslength(password.length < requiredLength ? true : alert('Your password is too short'))
+        setPassword(password.length < requiredLength ? true : alert('Your password is too short'));
+        setUsername(username.length < requiredLength ? true : alert('Your username is too short'));
         // setValidLength(firstPassword.length >= requiredLength ? true : false)
 
     },[])
