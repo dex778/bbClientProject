@@ -4,6 +4,8 @@ import {  Form, FormGroup, Label, Input, Button } from 'reactstrap';
 
 import { BrowserRouter as Router, Switch, Route, Link} from 'react-router-dom';
 import e from 'cors';
+import APIURL from '../../helpers/environment'
+
 //Rachel create frontend
 const RecipePage = (props) => {
     // console.log(props)
@@ -14,7 +16,7 @@ const RecipePage = (props) => {
     
     const handleSubmit = (e) => {
         e.preventDefault();
-        fetch('http://localhost:3000/recipe/create', {
+        fetch(`${APIURL}/recipe/create`, {
         method: 'POST',
         body: JSON.stringify({ 
             name: name, 
